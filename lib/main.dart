@@ -41,16 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Padding(padding: EdgeInsets.only(left: 2)),
+        leading:  Padding(
+          padding: const EdgeInsets.only(left: 2),
+          child: Row(
+
+          ),
+        ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             color: Colors.teal,
             gradient: LinearGradient(
-                colors: [
-                  Colors.deepPurple,
-                  Colors.pink,
-                  Colors.deepPurple]
-            ),
+                colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
           ),
         ),
         centerTitle: true,
