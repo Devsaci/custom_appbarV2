@@ -49,9 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {},
                 icon: const Icon(Icons.account_circle),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.account_circle),
+              Expanded(
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.account_circle),
+                ),
               ),
             ],
           ),
