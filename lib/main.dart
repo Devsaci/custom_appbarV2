@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -40,9 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UI Flutter Demo HomePage"),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              color: Colors.teal,
+              gradient: LinearGradient(
+                  colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple])),
+        ),
+        centerTitle: true,
+
+        title: const Text(
+          "UI Flutter Custom Bar",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+        backgroundColor: Colors.amber,
       ),
-      body: Center(child: buildFlatButton(context)),
+      body: const Center(child: null),
     );
   }
 
