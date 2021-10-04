@@ -80,9 +80,15 @@ class _MyHomePageState extends State<MyHomePage> {
           "UI Flutter Custom Bar",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
-        backgroundColor: Colors.amber,
       ),
-      body: const Center(child: null),
+      body: const Center(
+          child: CustomScrollView(
+              slivers: <Widget>[
+
+              ],
+          ),
+
+      ),
     );
   }
 
