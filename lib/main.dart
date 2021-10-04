@@ -41,13 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:  Padding(
+        leading: Padding(
           padding: const EdgeInsets.only(left: 2),
           child: Row(
             children: [
-
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.account_circle),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.account_circle),
+              ),
             ],
-
           ),
         ),
         flexibleSpace: Container(
