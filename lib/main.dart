@@ -41,14 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const Padding(padding: EdgeInsets.only(left: 2)),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-              color: Colors.teal,
-              gradient: LinearGradient(
-                  colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple])),
+            color: Colors.teal,
+            gradient: LinearGradient(
+                colors: [
+                  Colors.deepPurple,
+                  Colors.pink,
+                  Colors.deepPurple]
+            ),
+          ),
         ),
         centerTitle: true,
-
         title: const Text(
           "UI Flutter Custom Bar",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
