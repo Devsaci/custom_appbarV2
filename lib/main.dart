@@ -58,6 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+        ],
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             color: Colors.teal,
