@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            const alert = AlertDialog(
+            final AlertDialog  alert = AlertDialog(
               title: Text("ALERT"),
             );
             showDialog(
