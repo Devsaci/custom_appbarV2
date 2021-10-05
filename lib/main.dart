@@ -49,11 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {},
                 icon: const Icon(Icons.account_circle),
               ),
-              Expanded(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.account_circle),
-                ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.print),
               ),
             ],
           ),
@@ -78,16 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: const Text(
           "UI Flutter Custom Bar",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
       body: const Center(
-          child: CustomScrollView(
-              slivers: <Widget>[
-
-              ],
-          ),
-
+        child: CustomScrollView(
+          slivers: <Widget>[SliverAppBar()],
+        ),
       ),
     );
   }
