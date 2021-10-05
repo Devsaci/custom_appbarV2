@@ -128,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
     );
     showDialog(
+        barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
           return alert;
