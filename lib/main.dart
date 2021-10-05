@@ -79,8 +79,35 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            final AlertDialog  alert = AlertDialog(
-              content: Text("ALERT"),
+            final AlertDialog alert = AlertDialog(
+              backgroundColor: Colors.cyan,
+              title: Text("Title Alert"),
+              content: Container(
+                  height: 200,
+                  child: Column(
+                    children: [
+                      const Divider(
+                        thickness: 6,
+                        color: Colors.deepPurple,
+                      ),
+                      const Text("ALERT"),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          color: Colors.pink,
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [Icon(Icons.build), Text("Build",style: TextStyle(color: Colors.black),)],
+                          ),
+                        ),
+                      )
+                    ],
+                  )),
             );
             showDialog(
                 context: context,
