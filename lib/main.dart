@@ -76,11 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: const Text(
           "UI Flutter Custom Bar",
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15 ,color: Colors.black),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body:  Center(
-          child: null
+      body: Center(child: RaisedButton(
+        onPressed: () {},
+        child: Text("Click Me"),
+      ),
       ),
     );
   }
