@@ -40,11 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Center(
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
+              expandedHeight: 150,
               leading: Padding(
                 padding: const EdgeInsets.only(left: 2),
                 child: Row(
@@ -53,9 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {},
                       icon: const Icon(Icons.account_circle),
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.print),
+                    Expanded(
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.print),
+                      ),
                     ),
                   ],
                 ),
@@ -85,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 "UI Flutter Custom Bar",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 10,
                     color: Colors.black),
               ),
             ),
