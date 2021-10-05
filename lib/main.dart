@@ -40,60 +40,47 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              expandedHeight: 150,
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 2),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.account_circle),
-                    ),
-                    Expanded(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.print),
-                      ),
-                    ),
-                  ],
-                ),
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 2),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.account_circle),
               ),
-              actions: <Widget>[
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.account_circle),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.account_circle),
-                ),
-              ],
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.teal,
-                  gradient: LinearGradient(colors: [
-                    Colors.deepPurple,
-                    Colors.pink,
-                    Colors.deepPurple
-                  ]),
-                ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.print),
               ),
-              centerTitle: true,
-              title: const Text(
-                "UI Flutter Custom Bar",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                    color: Colors.black),
-              ),
-            ),
-            SliverList(delegate: SliverChildListDelegate([])),
-          ],
+            ],
+          ),
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+        ],
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            color: Colors.teal,
+            gradient: LinearGradient(
+                colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
+          ),
+        ),
+        centerTitle: true,
+        title: const Text(
+          "UI Flutter Custom Bar",
+          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15 ,color: Colors.black),
+        ),
+      ),
+      body:  Center(
+          child: null
       ),
     );
   }
