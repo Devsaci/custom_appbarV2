@@ -79,53 +79,59 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            final AlertDialog alert = AlertDialog(
-              backgroundColor: Colors.cyan,
-              title: Text("Title Alert"),
-              content: Container(
-                  height: 200,
-                  child: Column(
-                    children: [
-                      const Divider(
-                        thickness: 6,
-                        color: Colors.deepPurple,
-                      ),
-                      const Text("ALERT"),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          color: Colors.pink,
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.build),
-                              Text(
-                                "Build", style: TextStyle(color: Colors.black),)
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  )),
-            );
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return alert;
-                });
+            builddDialog(context);
           },
           child: Text("Click Me"),
         ),
       ),
     );
+  }
+
+  void builddDialog(BuildContext context) {
+    final AlertDialog alert = AlertDialog(
+      backgroundColor: Colors.cyan,
+      title: Text("Title Alert"),
+      content: Container(
+          height: 200,
+          child: Column(
+            children: [
+              const Divider(
+                thickness: 6,
+                color: Colors.deepPurple,
+              ),
+              const Text("ALERT"),
+              const SizedBox(
+                height: 25,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  color: Colors.pink,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(Icons.build),
+                      Text(
+                        "Build Dialog",
+                        style: TextStyle(color: Colors.black),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        });
   }
 
   FlatButton buildFlatButton(BuildContext context) {
