@@ -49,10 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {},
                 icon: const Icon(Icons.account_circle),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.print),
-              ),
             ],
           ),
         ),
@@ -80,10 +76,20 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: Center(child: RaisedButton(
-        onPressed: () {},
-        child: Text("Click Me"),
-      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            const alert = AlertDialog(
+              title: Text("ALERT"),
+            );
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return alert;
+                });
+          },
+          child: Text("Click Me"),
+        ),
       ),
     );
   }
