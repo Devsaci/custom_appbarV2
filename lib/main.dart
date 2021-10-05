@@ -97,12 +97,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         width: double.infinity,
                         child: RaisedButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
                           color: Colors.pink,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [Icon(Icons.build), Text("Build",style: TextStyle(color: Colors.black),)],
+                            children: const [
+                              Icon(Icons.build),
+                              Text(
+                                "Build", style: TextStyle(color: Colors.black),)
+                            ],
                           ),
                         ),
                       )
