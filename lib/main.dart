@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           onPressed: () {
             final AlertDialog  alert = AlertDialog(
-              title: Text("ALERT"),
+              content: Text("ALERT"),
             );
             showDialog(
                 context: context,
