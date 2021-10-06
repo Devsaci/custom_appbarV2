@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
@@ -85,13 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: ListView(
-      children : <Widget>[
-        SizedBox(height: 30,),
-        Text("sliser 1 : Initial Page Index 0\n\n", textAlign: TextAlign.center )
-        
-      ],
-
-
+        children:  <Widget>[
+          const SizedBox(
+            height: 30,
+          ),
+          const Text("Slider 1 : Initial Page Index 0\n\n",
+              textAlign: TextAlign.center),
+          CarouselSlider(
+            options: CarouselOptions(),
+            items: [],
+          ),
+        ],
       ),
     );
   }
