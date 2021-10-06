@@ -91,8 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
               SnackBar(
                 action: SnackBarAction(
                     label: "Undo", textColor: Colors.black,
-                    onPressed: () {}),
-                duration: Duration(seconds: 5),
+                    onPressed: () {
+                      setState(() {
+                        str = "UI Flutter Custom Bar";
+                      });
+                    }),
+                duration: const Duration(seconds: 5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
