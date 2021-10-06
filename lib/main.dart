@@ -100,10 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
               mainButton: FlatButton(
                   onPressed: () {
                     setState(() {
-                      
+
                     });
                   },
                   child: const Text("Undo")),
+                flushbarPosition: FlushbarPosition.BOTTOM,
             ).show(context);
           },
         ),
