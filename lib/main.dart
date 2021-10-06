@@ -80,34 +80,37 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           child: const Text(" Show SnackBar "),
           onPressed: () {
-
             setState(() {
               str = '';
             });
-
             // final sBar = SnackBar(content: Text("SnackBar"));
             // _x.currentState.showSnackBar(sBar);
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                action: SnackBarAction(
-                    label: "Undo", textColor: Colors.black,
-                    onPressed: () {
-                      setState(() {
-                        str = "UI Flutter Custom Bar";
-                      });
-                    }),
-                duration: const Duration(seconds: 5),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                backgroundColor: Colors.red,
-                // margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(20),
-                content: Text('A SnackBar has been shown.'),
-              ),
-            );
+            buildSnackBar(context);
           },
         ),
+      ),
+    );
+  }
+
+  void buildSnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        action: SnackBarAction(
+            label: "Undo",
+            textColor: Colors.black,
+            onPressed: () {
+              setState(() {
+                str = "UI Flutter Custom Bar";
+              });
+            }),
+        duration: const Duration(seconds: 5),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        backgroundColor: Colors.red,
+        // margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
+        content: Text('A SnackBar has been shown.'),
       ),
     );
   }
