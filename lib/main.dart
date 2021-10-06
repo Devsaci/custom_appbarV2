@@ -32,12 +32,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _x = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _x = GlobalKey<ScaffoldState>();
+
+  String str = "UI Flutter Custom Bar";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _x,
+      // key: _x,
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
@@ -68,8 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         centerTitle: true,
-        title: const Text(
-          "UI Flutter Custom Bar",
+        title: Text(
+          str,
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
