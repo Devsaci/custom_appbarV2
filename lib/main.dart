@@ -84,7 +84,15 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: null,
+      body: ListView(
+      children : <Widget>[
+        SizedBox(height: 30,),
+        Text("sliser 1 : Initial Page Index 0\n\n", textAlign: TextAlign.center )
+        
+      ],
+
+
+      ),
     );
   }
 
