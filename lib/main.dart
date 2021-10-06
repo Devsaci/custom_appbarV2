@@ -4,6 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'package:another_flushbar/flushbar.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar_route.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -80,12 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           child: const Text(" Show Flushbar"),
           onPressed: () {
-            setState(() {
-              str = '';
-            });
-            // final sBar = SnackBar(content: Text("SnackBar"));
-            // _x.currentState.showSnackBar(sBar);
-            buildSnackBar(context);
+            Flushbar(
+                title: "title",
+                message: "message",
+            ).show(context);
           },
         ),
       ),
