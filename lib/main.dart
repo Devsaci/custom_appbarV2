@@ -32,14 +32,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //98. TextSpan & Toast
-  Widget myWidget() {
-    return myWidget();
-  }
+  final GlobalKey<ScaffoldState> _x = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _x,
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
@@ -80,11 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           child: Text(" Show SnackBar "),
           onPressed: () {
-           final sBar = SnackBar(content: Text("SnackBar"));
-           Scaffold.of(context).showSnackBar(sBar);
+            // final sBar = SnackBar(content: Text("SnackBar"));
+            // _x.currentState.showSnackBar(sBar);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('A SnackBar has been shown.'),
+              ),
+            );
           },
-          
-          
         ),
       ),
     );
