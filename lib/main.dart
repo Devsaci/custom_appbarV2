@@ -100,11 +100,12 @@ class _MyHomePageState extends State<MyHomePage> {
               mainButton: FlatButton(
                   onPressed: () {
                     setState(() {
-
+                      //Close FlushBar
+                      Navigator.of(context).pop();
                     });
                   },
-                  child: const Text("Undo")),
-                flushbarPosition: FlushbarPosition.BOTTOM,
+                  child: const Text("Close")),
+              flushbarPosition: FlushbarPosition.BOTTOM,
             ).show(context);
           },
         ),
