@@ -78,10 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: RaisedButton(
+          child: Text(" Show SnackBar "),
           onPressed: () {
-            builddDialog(context);
+           final sBar = SnackBar(content: Text("SnackBar"));
+           Scaffold.of(context).showSnackBar(sBar);
           },
-          child: Text("Click Me"),
+          
+          
         ),
       ),
     );
@@ -128,6 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
     );
     showDialog(
+        barrierColor: Colors.red.withOpacity(0.5),
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
