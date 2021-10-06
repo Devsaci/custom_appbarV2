@@ -38,11 +38,16 @@ class _MyHomePageState extends State<MyHomePage> {
   // final GlobalKey<ScaffoldState> _x = GlobalKey<ScaffoldState>();
 
   String str = "UI Flutter Custom Bar";
+  List imgList = [
+    "images/s1.jpg",
+    "images/s2.jpg",
+    "images/s3.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // key: _x,
+
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
@@ -79,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: SelectableTextPropertes(),
+      body: null,
     );
   }
 
