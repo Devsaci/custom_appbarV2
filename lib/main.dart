@@ -85,8 +85,25 @@ class _MyHomePageState extends State<MyHomePage> {
           child: const Text(" Show Flushbar"),
           onPressed: () {
             Flushbar(
-                title: "title",
-                message: "message",
+              title: "title",
+              message: "message",
+              messageText: const Text(
+                "messageText",
+                style: TextStyle(color: Colors.black),
+              ),
+              leftBarIndicatorColor: Colors.red,
+              backgroundColor: Colors.amber,
+              icon: const Icon(
+                Icons.account_circle,
+                size: 50,
+              ),
+              mainButton: FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      
+                    });
+                  },
+                  child: const Text("Undo")),
             ).show(context);
           },
         ),
