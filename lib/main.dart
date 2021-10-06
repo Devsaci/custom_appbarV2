@@ -81,7 +81,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // final sBar = SnackBar(content: Text("SnackBar"));
             // _x.currentState.showSnackBar(sBar);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
+              SnackBar(
+                duration: Duration(seconds: 5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                backgroundColor: Colors.red,
+                // margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(20),
                 content: Text('A SnackBar has been shown.'),
               ),
             );
