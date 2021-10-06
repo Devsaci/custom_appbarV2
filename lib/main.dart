@@ -72,20 +72,25 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text(
           str,
-          style: TextStyle(
+          style: const TextStyle(
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
       body: Center(
         child: RaisedButton(
-          child: Text(" Show SnackBar "),
+          child: const Text(" Show SnackBar "),
           onPressed: () {
+
+            setState(() {
+              str = '';
+            });
+
             // final sBar = SnackBar(content: Text("SnackBar"));
             // _x.currentState.showSnackBar(sBar);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 action: SnackBarAction(
-                    label: "label", textColor: Colors.black,
+                    label: "Undo", textColor: Colors.black,
                     onPressed: () {}),
                 duration: Duration(seconds: 5),
                 shape: RoundedRectangleBorder(
