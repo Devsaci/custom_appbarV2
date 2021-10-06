@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icons.account_circle,
                 size: 50,
               ),
+              duration: const Duration(seconds: 3),
               mainButton: FlatButton(
                   onPressed: () {
                     setState(() {
