@@ -80,38 +80,101 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: const Text(" Show Flushbar"),
-          onPressed: () {
-            Flushbar(
-              title: "title",
-              message: "message",
-              messageText: const Text(
-                "messageText",
-                style: TextStyle(color: Colors.black),
-              ),
-              leftBarIndicatorColor: Colors.red,
-              backgroundColor: Colors.amber,
-              icon: const Icon(
-                Icons.account_circle,
-                size: 50,
-              ),
-              duration: const Duration(seconds: 3),
-              mainButton: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      //Close FlushBar
-                      Navigator.of(context).pop();
-                    });
-                  },
-                  child: const Text("Close")),
-              flushbarPosition: FlushbarPosition.BOTTOM,
-            ).show(context);
-          },
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: 200,
+            height: 50,
+            color: Colors.green,
+            child: const Text(
+              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              overflow: TextOverflow.clip,
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            width: 200,
+            height: 50,
+            color: Colors.green,
+            child: const Text(
+              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            width: 200,
+            height: 50,
+            color: Colors.green,
+            child: const Text(
+              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              overflow: TextOverflow.fade,
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            width: 200,
+            height: 50,
+            color: Colors.green,
+            child: const Text(
+              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              overflow: TextOverflow.visible,
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+        ],
       ),
     );
+  }
+
+  RaisedButton buildRaisedButton() {
+    return RaisedButton(
+      child: const Text(" Show Flushbar"),
+      onPressed: () {
+        // buildFlushBar(context);
+      },
+    );
+  }
+
+  void buildFlushBar(BuildContext context) {
+    Flushbar(
+      title: "title",
+      message: "message",
+      messageText: const Text(
+        "messageText",
+        style: TextStyle(color: Colors.black),
+      ),
+      leftBarIndicatorColor: Colors.red,
+      backgroundColor: Colors.amber,
+      icon: const Icon(
+        Icons.account_circle,
+        size: 50,
+      ),
+      duration: const Duration(seconds: 3),
+      mainButton: FlatButton(
+          onPressed: () {
+            setState(() {
+              //Close FlushBar
+              Navigator.of(context).pop();
+            });
+          },
+          child: const Text("Close")),
+      flushbarPosition: FlushbarPosition.BOTTOM,
+    ).show(context);
   }
 
   void buildSnackBar(BuildContext context) {
