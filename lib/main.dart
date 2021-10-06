@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: RaisedButton(
-          child: const Text(" Show SnackBar "),
+          child: const Text(" Show Flushbar"),
           onPressed: () {
             setState(() {
               str = '';
