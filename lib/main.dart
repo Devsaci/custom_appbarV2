@@ -86,9 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           const SelectableText(
             "This is A Clipped Text ",
-              showCursor: true,
-              toolbarOptions: ToolbarOptions(copy: true, selectAll: true,paste: true),
-
+            showCursor: true,
+            cursorHeight: 30,
+            cursorWidth: 10,
+            style: TextStyle(fontSize: 15),
+            toolbarOptions:
+                ToolbarOptions(copy: true, selectAll: true, paste: true),
           ),
           SizedBox(
             height: 15,
@@ -101,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.clip,
-              softWrap:false,
+              softWrap: false,
             ),
           ),
           SizedBox(
@@ -115,7 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.ellipsis,
-
             ),
           ),
           SizedBox(
@@ -129,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.fade,
-              softWrap:false,
+              softWrap: false,
             ),
           ),
           SizedBox(
@@ -143,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.visible,
-              softWrap:false,
+              softWrap: false,
             ),
           ),
           SizedBox(
