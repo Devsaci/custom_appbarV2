@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:another_flushbar/flushbar.dart';
-import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:another_flushbar/flushbar_route.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,79 +79,83 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SelectableText(
-            "This is A Clipped Text ",
-            showCursor: true,
-            cursorHeight: 30,
-            cursorWidth: 10,
-            style: TextStyle(fontSize: 15),
-            toolbarOptions:
-                ToolbarOptions(copy: true, selectAll: true, paste: true),
+      body: SelectableTextPropertes(),
+    );
+  }
+
+  Column SelectableTextPropertes() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SelectableText(
+          "This is A Clipped Text ",
+          showCursor: true,
+          cursorHeight: 30,
+          cursorWidth: 10,
+          style: TextStyle(fontSize: 15),
+          toolbarOptions:
+              ToolbarOptions(copy: true, selectAll: true, paste: true),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Container(
+          width: 200,
+          height: 50,
+          color: Colors.green,
+          child: const Text(
+            "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            overflow: TextOverflow.clip,
+            softWrap: false,
           ),
-          SizedBox(
-            height: 15,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Container(
+          width: 200,
+          height: 50,
+          color: Colors.green,
+          child: const Text(
+            "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            overflow: TextOverflow.ellipsis,
           ),
-          Container(
-            width: 200,
-            height: 50,
-            color: Colors.green,
-            child: const Text(
-              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              overflow: TextOverflow.clip,
-              softWrap: false,
-            ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Container(
+          width: 200,
+          height: 50,
+          color: Colors.green,
+          child: const Text(
+            "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            overflow: TextOverflow.fade,
+            softWrap: false,
           ),
-          SizedBox(
-            height: 8,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Container(
+          width: 200,
+          height: 50,
+          color: Colors.green,
+          child: const Text(
+            "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            overflow: TextOverflow.visible,
+            softWrap: false,
           ),
-          Container(
-            width: 200,
-            height: 50,
-            color: Colors.green,
-            child: const Text(
-              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Container(
-            width: 200,
-            height: 50,
-            color: Colors.green,
-            child: const Text(
-              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              overflow: TextOverflow.fade,
-              softWrap: false,
-            ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Container(
-            width: 200,
-            height: 50,
-            color: Colors.green,
-            child: const Text(
-              "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              overflow: TextOverflow.visible,
-              softWrap: false,
-            ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+      ],
     );
   }
 
