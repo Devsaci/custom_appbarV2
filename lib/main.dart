@@ -84,6 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
             // _x.currentState.showSnackBar(sBar);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
+                action: SnackBarAction(
+                    label: "label", textColor: Colors.black,
+                    onPressed: () {}),
                 duration: Duration(seconds: 5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
