@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.clip,
+              softWrap:false,
             ),
           ),
           SizedBox(
