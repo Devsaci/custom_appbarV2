@@ -106,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.ellipsis,
+
             ),
           ),
           SizedBox(
@@ -119,6 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.fade,
+              softWrap:false,
             ),
           ),
           SizedBox(
@@ -132,6 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
               "This is A Clipped Text This is A Clipped Text This is A Clipped Text ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               overflow: TextOverflow.visible,
+              softWrap:false,
             ),
           ),
           SizedBox(
