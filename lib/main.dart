@@ -84,6 +84,15 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          const SelectableText(
+            "This is A Clipped Text ",
+              showCursor: true,
+              toolbarOptions: ToolbarOptions(copy: true, selectAll: true,paste: true),
+
+          ),
+          SizedBox(
+            height: 15,
+          ),
           Container(
             width: 200,
             height: 50,
