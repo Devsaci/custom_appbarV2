@@ -98,9 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  child:  Image.asset(imageUrl,fit:BoxFit.fill,),
-
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child: Image.asset(
+                  imageUrl,
+                  fit: BoxFit.fill,
+                ),
               );
             }).toList(),
           ),
@@ -109,21 +111,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const Text("Slider 2 : Initial Page Index 1\n\n",
               textAlign: TextAlign.center),
-          CarouselSlider(
-            options: CarouselOptions(
-              height: 250,
-              initialPage: 1,
-            ),
-            items: imgList.map((imageUrl) {
-              return Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child:  Image.asset(imageUrl,fit:BoxFit.fill,),
-
-              );
-            }).toList(),
-          ),
-
+          CarouselSlider.builder(
+              itemCount: null,
+              itemBuilder: null,
+              options: CarouselOptions(
+                height: 250,
+                initialPage: 0,
+              )),
         ],
       ),
     );
