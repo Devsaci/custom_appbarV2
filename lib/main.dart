@@ -92,12 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center),
           CarouselSlider(
             options: CarouselOptions(
-              height: 50,
+              height: 250,
               initialPage: 0,
             ),
             items: imgList.map((imageUrl) {
               return Container(
-                  child:  Image.asset(imageUrl),
+                width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child:  Image.asset(imageUrl,fit:BoxFit.fill,),
 
               );
             }).toList(),
