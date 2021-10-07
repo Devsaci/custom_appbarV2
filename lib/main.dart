@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center),
           CarouselSlider(
             options: CarouselOptions(
+              scrollDirection: Axis.vertical,
               autoPlay: true,
               enlargeCenterPage: true,
               height: 250,
@@ -100,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
-                // margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: EdgeInsets.symmetric(horizontal: 10),
                 child: Image.asset(
                   imageUrl,
                   fit: BoxFit.fill,
