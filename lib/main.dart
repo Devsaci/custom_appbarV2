@@ -85,76 +85,79 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: ListView(
-        children: <Widget>[
-          const SizedBox(
-            height: 30,
+      body: buildCarousel(),
+    );
+  }
+
+  ListView buildCarousel() {
+    return ListView(
+      children: <Widget>[
+        const SizedBox(
+          height: 30,
+        ),
+        const Text("Slider 1 : Initial Page Index 0\n\n",
+            textAlign: TextAlign.center),
+        CarouselSlider(
+          options: CarouselOptions(
+            onPageChanged: (int index, CarouselPageChangedReason reason) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            autoPlayInterval: const Duration(seconds: 2),
+            scrollDirection: Axis.vertical,
+            autoPlay: true,
+            enlargeCenterPage: true,
+            height: 250,
+            initialPage: 0,
           ),
-          const Text("Slider 1 : Initial Page Index 0\n\n",
-              textAlign: TextAlign.center),
-          CarouselSlider(
+          items: imgList.map((imageUrl) {
+            return Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              child: Image.asset(
+                imageUrl,
+                fit: BoxFit.fill,
+              ),
+            );
+          }).toList(),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            buildContainerCircular(0),
+            buildContainerCircular(1),
+            buildContainerCircular(2),
+          ],
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        const Text("Slider 2 : Initial Page Index 1\n\n",
+            textAlign: TextAlign.center),
+        CarouselSlider.builder(
+            itemCount: imgList.length,
+            itemBuilder: (BuildContext context, int index, int realIndex) {
+              return Container(
+                width: double.infinity,
+                // margin: EdgeInsets.symmetric(horizontal: 10),
+                child: Image.asset(
+                  imgList[index],
+                  fit: BoxFit.fill,
+                ),
+              );
+            },
             options: CarouselOptions(
-              onPageChanged: (int index, CarouselPageChangedReason reason) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-              autoPlayInterval: const Duration(seconds: 2),
-              scrollDirection: Axis.vertical,
+              autoPlayInterval: const Duration(seconds: 1),
               autoPlay: true,
               enlargeCenterPage: true,
               height: 250,
               initialPage: 0,
-            ),
-            items: imgList.map((imageUrl) {
-              return Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child: Image.asset(
-                  imageUrl,
-                  fit: BoxFit.fill,
-                ),
-              );
-            }).toList(),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildContainerCircular(),
-              buildContainerCircular(),
-              buildContainerCircular(),
-            ],
-          ),
-
-          const SizedBox(
-            height: 30,
-          ),
-          const Text("Slider 2 : Initial Page Index 1\n\n",
-              textAlign: TextAlign.center),
-          CarouselSlider.builder(
-              itemCount: imgList.length,
-              itemBuilder: (BuildContext context, int index, int realIndex) {
-                return Container(
-                  width: double.infinity,
-                  // margin: EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.asset(
-                    imgList[index],
-                    fit: BoxFit.fill,
-                  ),
-                );
-              },
-              options: CarouselOptions(
-                autoPlayInterval: const Duration(seconds: 1),
-                autoPlay: true,
-                enlargeCenterPage: true,
-                height: 250,
-                initialPage: 0,
-              )),
-        ],
-      ),
+            )),
+      ],
     );
   }
 
