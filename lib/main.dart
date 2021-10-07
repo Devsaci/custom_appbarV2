@@ -96,7 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
               initialPage: 0,
             ),
             items: imgList.map((imageUrl) {
-              return Container();
+              return Container(
+                  child:  Image.asset(imageUrl),
+
+              );
             }).toList(),
           ),
         ],
