@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center),
           CarouselSlider(
             options: CarouselOptions(
+              autoPlay: true,
               enlargeCenterPage: true,
               height: 250,
               initialPage: 0,
@@ -125,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               options: CarouselOptions(
+                autoPlay: true,
                 enlargeCenterPage: true,
                 height: 250,
                 initialPage: 0,
