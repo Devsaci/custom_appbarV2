@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String str = "UI Flutter Custom Bar";
 
-  late int _currentIndex;
+  late int _currentIndex =0;
   List imgList = [
     "images/s1.jpg",
     "images/s2.jpg",
@@ -120,11 +120,15 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 30,
           ),
-          Container(
-            decoration: BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
-            width: 100,
-            height: 100,
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildContainerCircular(),
+              buildContainerCircular(),
+              buildContainerCircular(),
+            ],
           ),
+
           const SizedBox(
             height: 30,
           ),
@@ -152,6 +156,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
+  }
+
+  Container buildContainerCircular(index) {
+    return Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          decoration:
+              BoxDecoration(color: _currentIndex == index? Colors.yellow:Colors.red, shape: BoxShape.circle),
+          width: 40,
+          height: 40,
+        );
   }
 
   Column SelectableTextPropertes() {
