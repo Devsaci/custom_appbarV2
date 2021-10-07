@@ -114,7 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
           CarouselSlider.builder(
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
-                return Container();
+                return Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: Image.asset(
+                    imgList[index],
+                    fit: BoxFit.fill,
+                  ),
+                );
               },
               options: CarouselOptions(
                 height: 250,
