@@ -112,8 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
           const Text("Slider 2 : Initial Page Index 1\n\n",
               textAlign: TextAlign.center),
           CarouselSlider.builder(
-              itemCount: null,
-              itemBuilder: null,
+              itemCount: imgList.length,
+              itemBuilder: (BuildContext context, int index, int realIndex) {
+                return Container();
+              },
               options: CarouselOptions(
                 height: 250,
                 initialPage: 0,
