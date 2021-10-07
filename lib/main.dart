@@ -92,6 +92,10 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center),
           CarouselSlider(
             options: CarouselOptions(
+              onPageChanged: (int index, CarouselPageChangedReason reason){
+
+
+              },
               scrollDirection: Axis.vertical,
               autoPlay: true,
               enlargeCenterPage: true,
