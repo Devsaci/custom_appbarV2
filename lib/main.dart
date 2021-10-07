@@ -126,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               options: CarouselOptions(
+                autoPlayInterval: const Duration(seconds: 1),
                 autoPlay: true,
                 enlargeCenterPage: true,
                 height: 250,
