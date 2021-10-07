@@ -84,14 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: ListView(
-        children:  <Widget>[
+        children: <Widget>[
           const SizedBox(
             height: 30,
           ),
           const Text("Slider 1 : Initial Page Index 0\n\n",
               textAlign: TextAlign.center),
           CarouselSlider(
-            options: CarouselOptions(),
+            options: CarouselOptions(
+              height: 50,
+              initialPage: 0,
+            ),
             items: [],
           ),
         ],
