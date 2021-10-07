@@ -99,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _currentIndex = index;
                 });
               },
+              autoPlayInterval: const Duration(seconds: 2),
               scrollDirection: Axis.vertical,
               autoPlay: true,
               enlargeCenterPage: true,
@@ -120,9 +121,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 30,
           ),
           Container(
-
+            decoration: BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
+            width: 100,
+            height: 100,
           ),
-
           const SizedBox(
             height: 30,
           ),
