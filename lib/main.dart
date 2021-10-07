@@ -92,13 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center),
           CarouselSlider(
             options: CarouselOptions(
+              enlargeCenterPage: true,
               height: 250,
               initialPage: 0,
             ),
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                // margin: EdgeInsets.symmetric(horizontal: 10),
                 child: Image.asset(
                   imageUrl,
                   fit: BoxFit.fill,
@@ -116,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return Container(
                   width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  // margin: EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset(
                     imgList[index],
                     fit: BoxFit.fill,
@@ -124,6 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               options: CarouselOptions(
+                enlargeCenterPage: true,
                 height: 250,
                 initialPage: 0,
               )),
