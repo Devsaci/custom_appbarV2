@@ -38,6 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // final GlobalKey<ScaffoldState> _x = GlobalKey<ScaffoldState>();
 
   String str = "UI Flutter Custom Bar";
+
+  late int _currentIndex;
   List imgList = [
     "images/s1.jpg",
     "images/s2.jpg",
@@ -94,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             options: CarouselOptions(
               onPageChanged: (int index, CarouselPageChangedReason reason) {
                 setState(() {
-
+                  _currentIndex = index;
                 });
               },
               scrollDirection: Axis.vertical,
