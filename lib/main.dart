@@ -119,6 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 30,
           ),
+          Container(
+
+          ),
+
+          const SizedBox(
+            height: 30,
+          ),
           const Text("Slider 2 : Initial Page Index 1\n\n",
               textAlign: TextAlign.center),
           CarouselSlider.builder(
