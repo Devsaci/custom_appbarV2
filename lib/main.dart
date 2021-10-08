@@ -109,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  myDialog() {
+
+  }
 
   Row buildRow(int value, String result, Color resultColor) {
     return Row(
