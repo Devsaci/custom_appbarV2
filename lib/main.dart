@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
         style: const TextStyle(fontSize: 15),
       ),
       selected: true,
-      controlAffinity: ListTileControlAffinity.trailing,
+      controlAffinity: ListTileControlAffinity.leading,
     );
   }
 
