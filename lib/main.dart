@@ -110,6 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   myDialog() {
+    var ad =  AlertDialog();
+    showDialog(context: context, builder: ad);
 
   }
 
