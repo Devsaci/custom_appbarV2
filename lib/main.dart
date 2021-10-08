@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -89,21 +90,36 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: Container(
-        color: _radioValue == 0 ? Colors.brown : Colors.green,
-        padding: EdgeInsets.all(32),
-        child: buildColumnRadioLIstTile(),
+      body: Padding(
+          padding: EdgeInsets.all(18.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Checkbox(value: null,onChanged: null,),
+                  Text(""),
+                ],
+              ),
+              CheckboxListTile(
+                  value: null, 
+                  onChanged: null,
+                  title: Text(""),
+                subtitle: Text(""),
+              ),
+            ],
+          ),
+
       ),
     );
   }
 
   Column buildColumnRadioLIstTile() {
     return Column(
-        children: [
-          buildRadioListTile(0, 'Brown', 'Change Bg to Brown'),
-          buildRadioListTile(1, 'Green', 'Change Bg to Green'),
-        ],
-      );
+      children: [
+        buildRadioListTile(0, 'Brown', 'Change Bg to Brown'),
+        buildRadioListTile(1, 'Green', 'Change Bg to Green'),
+      ],
+    );
   }
 
   RadioListTile buildRadioListTile(val, txt, subTxt) {
