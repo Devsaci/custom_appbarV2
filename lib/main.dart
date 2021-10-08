@@ -101,7 +101,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.bold),
             ),
             Row(
+                children: [
+                  Radio(value: 3, groupValue: _radioValue, onChanged: (value){
 
+                  })
+
+                ],
             ),
           ],
         ),
