@@ -117,7 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text("$result",style: TextStyle(color: resultColor),),
                 Divider(height: 10,),
-                Text("Right Answer = 4"),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Text("Right Answer = 4"),
+                ),
 
               ],
 
