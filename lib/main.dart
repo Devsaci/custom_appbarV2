@@ -90,19 +90,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Container(
-        color: _radioValue == 0? Colors.brown:Colors.green,
+        color: _radioValue == 0 ? Colors.brown : Colors.green,
         padding: EdgeInsets.all(32),
         child: Column(
           children: [
-            buildRadioListTile(0,'Brown','Change Bg to Brown'),
-            buildRadioListTile(1,'Green','Change Bg to Green'),
+            buildRadioListTile(0, 'Brown', 'Change Bg to Brown'),
+            buildRadioListTile(1, 'Green', 'Change Bg to Green'),
           ],
         ),
       ),
     );
   }
 
-  RadioListTile buildRadioListTile( val,  txt, subTxt) {
+  RadioListTile buildRadioListTile(val, txt, subTxt) {
     return RadioListTile(
       value: val,
       groupValue: _radioValue,
@@ -111,9 +111,16 @@ class _MyHomePageState extends State<MyHomePage> {
           _radioValue = value;
         });
       },
-      title: Text(txt, style: const TextStyle(fontSize: 15),),
-      subtitle: Text(subTxt, style: const TextStyle(fontSize: 15),),
-        selected: true,
+      title: Text(
+        txt,
+        style: const TextStyle(fontSize: 15),
+      ),
+      subtitle: Text(
+        subTxt,
+        style: const TextStyle(fontSize: 15),
+      ),
+      selected: true,
+      controlAffinity: ListTileControlAffinity.trailing,
     );
   }
 
@@ -283,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-          ToolbarOptions(copy: true, selectAll: true, paste: true),
+              ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
