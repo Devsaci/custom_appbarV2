@@ -123,6 +123,20 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               title: Text("cSharp"),
               subtitle: Text("####"),
+              controlAffinity : ListTileControlAffinity.leading,
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  value: python,
+                  onChanged: (value){
+                    setState(() {
+                      python = value!;
+                    });
+                  },
+                ),
+                Text("python"),
+              ],
             ),
           ],
         ),
