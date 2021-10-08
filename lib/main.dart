@@ -51,6 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
   String? result;
   Color? resultColor;
 
+  bool js = false;
+  bool cSharp = false;
+  bool python = false;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,24 +98,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Padding(
-          padding: EdgeInsets.all(18.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Checkbox(value: null,onChanged: null,),
-                  Text(""),
-                ],
-              ),
-              CheckboxListTile(
-                  value: null, 
-                  onChanged: null,
-                  title: Text(""),
-                subtitle: Text(""),
-              ),
-            ],
-          ),
-
+        padding: EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Checkbox(
+                  value: js,
+                  onChanged: (value){
+                    setState(() {
+                      js = value;
+                    });
+                  },
+                ),
+                Text("JavaScript"),
+              ],
+            ),
+            // CheckboxListTile(
+            //   value: null,
+            //   onChanged: null,
+            //   title: Text(""),
+            //   subtitle: Text(""),
+            // ),
+          ],
+        ),
       ),
     );
   }
