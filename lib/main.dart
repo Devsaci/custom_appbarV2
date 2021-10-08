@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Row buildRow() {
+  Row buildRow(int value,String result, Color resultColor) {
     return Row(
             children: [
               Radio(
