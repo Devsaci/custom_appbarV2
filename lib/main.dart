@@ -115,7 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 100,
           child: Column(
               children: [
-                Text("$result"),
+                Text("$result",style: TextStyle(color: resultColor),),
+                Divider(height: 10,),
+                Text("Right Answer = 4"),
+
               ],
 
           ),
