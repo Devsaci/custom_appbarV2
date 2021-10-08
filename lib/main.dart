@@ -46,9 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
     "images/s3.jpg",
   ];
 
-  int _radioValue =0;
-  late String result;
-  late Color resultColor;
+  int _radioValue = 0;
+  String? result;
+  Color? resultColor;
 
   @override
   Widget build(BuildContext context) {
@@ -92,21 +92,25 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: EdgeInsets.all(10.0),
         child: Column(
-          children:  [
+          children: [
             const Text(
               "Guess the answer :2+2 =?",
               style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 26,
+                  color: Colors.blue,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Row(
-                children: [
-                  Radio(value: 3, groupValue: _radioValue, onChanged: (value){
+              children: [
+                Radio(
+                  value: 3,
+                  onChanged: (value) {
 
-                  })
-
-                ],
+                  },
+                  groupValue: _radioValue,
+                ),
+                const Text("3"),
+              ],
             ),
           ],
         ),
