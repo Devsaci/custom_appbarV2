@@ -92,14 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         color: _radioValue == 0 ? Colors.brown : Colors.green,
         padding: EdgeInsets.all(32),
-        child: Column(
-          children: [
-            buildRadioListTile(0, 'Brown', 'Change Bg to Brown'),
-            buildRadioListTile(1, 'Green', 'Change Bg to Green'),
-          ],
-        ),
+        child: buildColumnRadioLIstTile(),
       ),
     );
+  }
+
+  Column buildColumnRadioLIstTile() {
+    return Column(
+        children: [
+          buildRadioListTile(0, 'Brown', 'Change Bg to Brown'),
+          buildRadioListTile(1, 'Green', 'Change Bg to Green'),
+        ],
+      );
   }
 
   RadioListTile buildRadioListTile(val, txt, subTxt) {
