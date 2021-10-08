@@ -53,52 +53,62 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 2),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.account_circle),
-                ),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.account_circle),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.account_circle),
-            ),
-          ],
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              color: Colors.teal,
-              gradient: LinearGradient(
-                  colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
-            ),
-          ),
-          centerTitle: true,
-          title: Text(
-            str,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
-          ),
-        ),
-      body: Container(
-          color: Colors.brown,
-          padding: EdgeInsets.all(32),
-          child: Column(
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 2),
+          child: Row(
             children: [
-
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.account_circle),
+              ),
             ],
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+        ],
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            color: Colors.teal,
+            gradient: LinearGradient(
+                colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
+          ),
+        ),
+        centerTitle: true,
+        title: Text(
+          str,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
+        ),
+      ),
+      body: Container(
+        color: Colors.brown,
+        padding: EdgeInsets.all(32),
+        child: Column(
+          children: [
+            buildRadioListTile(),
+          ],
+        ),
+      ),
     );
+  }
+
+  RadioListTile<dynamic> buildRadioListTile() {
+    return RadioListTile(
+            value:,
+            groupValue:,
+            onChanged:,
+            title:,
+            subtitle:,
+          );
   }
 
   Padding buildRadio() {
@@ -267,7 +277,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-              ToolbarOptions(copy: true, selectAll: true, paste: true),
+          ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
