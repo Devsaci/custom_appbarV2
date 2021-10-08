@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -55,9 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool cSharp = false;
   bool python = false;
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,11 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(18.0),
         child: Column(
           children: [
+            const Text(
+              "Select All Programming Languages you know",
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
             Row(
               children: [
                 Checkbox(
                   value: js,
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       js = value!;
                     });
@@ -116,20 +116,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             CheckboxListTile(
               value: cSharp,
-              onChanged: (value){
+              onChanged: (value) {
                 setState(() {
                   cSharp = value!;
                 });
               },
               title: Text("cSharp"),
               subtitle: Text("####"),
-              controlAffinity : ListTileControlAffinity.leading,
+              controlAffinity: ListTileControlAffinity.leading,
             ),
             Row(
               children: [
                 Checkbox(
                   value: python,
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       python = value!;
                     });
@@ -138,6 +138,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text("python"),
               ],
             ),
+            RaisedButton(
+              onPressed: (){
+              var ad = AlertDialog();
+              showDialog(context: context, builder: (BuildContext context){
+                return ad;
+              });
+            },
+            )
           ],
         ),
       ),
@@ -329,7 +337,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Column SelectableTextPropertes() {
+  Column SelectableTextProperty() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -464,7 +472,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void builddDialog(BuildContext context) {
+  void buildDialog(BuildContext context) {
     final AlertDialog alert = AlertDialog(
       backgroundColor: Colors.cyan,
       title: Text("Title Alert"),
