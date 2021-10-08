@@ -145,6 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Thank you for Applying"),
                   content: Container(
                     height: 100,
+                    child: Text("Text"),
                   ),
                 );
                 showDialog(
