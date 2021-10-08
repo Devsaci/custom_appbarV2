@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            buildRow(),
+            buildRow(3,"Error",Colors.red),
           ],
         ),
       ),
