@@ -111,11 +111,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Row(
             children: [
               Radio(
-                value: 3,
+                value: value,
                 onChanged: (value) {
                   _radioValue == value;
-                  result="Error";
-                  resultColor=Colors.red;
+                  result=result;
+                  resultColor=resultColor;
                 },
                 groupValue: _radioValue,
               ),
