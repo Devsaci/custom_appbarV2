@@ -57,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String get txt {
     String str = "You Selected : \n";
     if (js == true) {
-      str = str + "JavaScript \n";
+      str += "JavaScript \n";
     } else {
-      str = str + "None";
+      str += "None";
     }
 
     return str;
