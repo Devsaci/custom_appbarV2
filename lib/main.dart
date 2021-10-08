@@ -139,12 +139,20 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             RaisedButton(
-              onPressed: (){
-              var ad = AlertDialog();
-              showDialog(context: context, builder: (BuildContext context){
-                return ad;
-              });
-            },
+              child: Text("Applying"),
+              onPressed: () {
+                var ad = AlertDialog(
+                  title: Text("Thank you for Applying"),
+                  content: Container(
+                    height: 100,
+                  ),
+                );
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return ad;
+                    });
+              },
             )
           ],
         ),
