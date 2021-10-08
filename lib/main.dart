@@ -114,10 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
         content: Container(
           height: 100,
           child: Column(
+              children: [
+                Text("$result"),
+              ],
 
           ),
         ),
-      title: Text("ALERT"),
 
     );
     showDialog(
