@@ -54,11 +54,15 @@ class _MyHomePageState extends State<MyHomePage> {
   bool cSharp = false;
   bool python = false;
 
-  String get txt{
-
+  String get txt {
     String str = "You Selected : \n";
+    if (js == true) {
+      str = str + "JavaScript \n";
+    } else {
+      str = str + "None";
+    }
 
-    return str ;
+    return str;
   }
 
   @override
