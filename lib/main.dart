@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String get txt{
 
-    String str = "";
+    String str = "You Selected : \n";
 
     return str ;
   }
