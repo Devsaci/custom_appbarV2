@@ -54,6 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
   bool cSharp = false;
   bool python = false;
 
+  String get txt{
+
+    String str = "";
+
+    return str ;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Thank you for Applying"),
                   content: Container(
                     height: 100,
-                    child: Text("Text"),
+                    child: Text(txt),
                   ),
                 );
                 showDialog(
