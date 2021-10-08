@@ -100,9 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            buildRow(3, "Error", Colors.red),
-            buildRow(4, "Correct", Colors.green),
-            buildRow(5, "Error", Colors.red),
+            buildRow(3),
+            buildRow(4),
+            buildRow(5),
           ],
         ),
       ),
@@ -111,22 +111,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
   myDialog() {
     var ad = AlertDialog(
-        content: Container(
-          height: 100,
-          child: Column(
-              children: [
-                Text("$result",style: TextStyle(color: resultColor),),
-                Divider(height: 10,),
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Text("Right Answer = 4"),
-                ),
-
-              ],
-
-          ),
+      content: Container(
+        height: 100,
+        child: Column(
+          children: [
+            Text(
+              "$result",
+              style: TextStyle(color: resultColor,fontWeight: FontWeight.bold,fontSize: 20),
+            ),
+            const Divider(
+              height: 10,
+              color: Colors.black,
+              thickness: 3,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Text("Right Answer = 4"),
+            ),
+          ],
         ),
-
+      ),
     );
     showDialog(
         context: context,
@@ -135,22 +139,22 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
-  Row buildRow(int value, String result, Color resultColor) {
+  Row buildRow(int valueV) {
     return Row(
       children: [
         Radio(
-          value: value,
+          value: valueV,
           onChanged: (value) {
             setState(() {
               _radioValue == value;
-              result = result;
-              resultColor = resultColor;
+              result = valueV==4?"Correct":"Error";
+              resultColor = valueV==4? Colors.green:Colors.red;
               myDialog();
             });
           },
           groupValue: _radioValue,
         ),
-        Text("$value"),
+        Text("$valueV"),
       ],
     );
   }
