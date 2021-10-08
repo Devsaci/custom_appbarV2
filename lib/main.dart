@@ -115,13 +115,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             CheckboxListTile(
-              value: js,
+              value: cSharp,
               onChanged: (value){
                 setState(() {
-                  js = value!;
+                  cSharp = value!;
                 });
               },
-              title: Text("JavaScript"),
+              title: Text("cSharp"),
               subtitle: Text("####"),
             ),
           ],
