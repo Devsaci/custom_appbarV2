@@ -111,7 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   myDialog() {
     var ad = AlertDialog(
+        content: Container(
+          height: 100,
+          child: Column(
+
+          ),
+        ),
       title: Text("ALERT"),
+
     );
     showDialog(
         context: context,
@@ -130,6 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               _radioValue == value;
               result = result;
               resultColor = resultColor;
+              myDialog();
             });
           },
           groupValue: _radioValue,
