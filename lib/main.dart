@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   value: js,
                   onChanged: (value){
                     setState(() {
-                      js = value;
+                      js = value!;
                     });
                   },
                 ),
