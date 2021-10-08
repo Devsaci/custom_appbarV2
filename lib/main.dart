@@ -90,25 +90,31 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Container(
-        color: Colors.brown,
+        color: _radioValue == 0? Colors.brown:Colors.green,
         padding: EdgeInsets.all(32),
         child: Column(
           children: [
-            buildRadioListTile(),
+            buildRadioListTile(0,'Brown','Change Bg to Brown'),
+            buildRadioListTile(1,'Green','Change Bg to Green'),
           ],
         ),
       ),
     );
   }
 
-  RadioListTile<dynamic> buildRadioListTile() {
+  RadioListTile buildRadioListTile( val,  txt, subTxt) {
     return RadioListTile(
-            value:,
-            groupValue:,
-            onChanged:,
-            title:,
-            subtitle:,
-          );
+      value: val,
+      groupValue: _radioValue,
+      onChanged: (value) {
+        setState(() {
+          _radioValue = value;
+        });
+      },
+      title: Text(txt, style: const TextStyle(fontSize: 15),),
+      subtitle: Text(subTxt, style: const TextStyle(fontSize: 15),),
+        selected: true,
+    );
   }
 
   Padding buildRadio() {
