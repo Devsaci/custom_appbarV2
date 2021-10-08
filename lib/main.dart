@@ -53,58 +53,59 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 2),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.account_circle),
-              ),
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.account_circle),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.account_circle),
-          ),
-        ],
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            color: Colors.teal,
-            gradient: LinearGradient(
-                colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
-          ),
-        ),
-        centerTitle: true,
-        title: Text(
-          str,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
-        ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            const Text(
-              "Guess the answer :2+2 =?",
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+        appBar: AppBar(
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 2),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.account_circle),
+                ),
+              ],
             ),
-            buildRow(3),
-            buildRow(4),
-            buildRow(5),
+          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.account_circle),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.account_circle),
+            ),
           ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              color: Colors.teal,
+              gradient: LinearGradient(
+                  colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
+            ),
+          ),
+          centerTitle: true,
+          title: Text(
+            str,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
+          ),
         ),
+        body: null);
+  }
+
+  Padding buildRadio() {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Column(
+        children: [
+          const Text(
+            "Guess the answer :2+2 =?",
+            style: TextStyle(
+                color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          buildRow(3),
+          buildRow(4),
+          buildRow(5),
+        ],
       ),
     );
   }
@@ -117,7 +118,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text(
               "$result",
-              style: TextStyle(color: resultColor,fontWeight: FontWeight.bold,fontSize: 20),
+              style: TextStyle(
+                  color: resultColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
             ),
             const Divider(
               height: 10,
@@ -147,8 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
           onChanged: (value) {
             setState(() {
               _radioValue == value;
-              result = valueV==4?"Correct":"Error";
-              resultColor = valueV==4? Colors.green:Colors.red;
+              result = valueV == 4 ? "Correct" : "Error";
+              resultColor = valueV == 4 ? Colors.green : Colors.red;
               myDialog();
             });
           },
