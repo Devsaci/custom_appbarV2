@@ -110,9 +110,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   myDialog() {
-    var ad =  AlertDialog();
-    showDialog(context: context, builder: ad);
-
+    var ad = AlertDialog(
+      title: Text("ALERT"),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return ad;
+        });
   }
 
   Row buildRow(int value, String result, Color resultColor) {
