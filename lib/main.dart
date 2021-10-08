@@ -39,12 +39,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String str = "UI Flutter Custom Bar";
 
-  late int _currentIndex =0;
+  late int _currentIndex = 0;
   List imgList = [
     "images/s1.jpg",
     "images/s2.jpg",
     "images/s3.jpg",
   ];
+
+  int _radioValue =0;
+  late String result;
+  late Color resultColor;
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +89,23 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: null,
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Column(
+          children:  [
+            const Text(
+              "Guess the answer :2+2 =?",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
+            Row(
+
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -126,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 30,
         ),
         Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             buildContainerCircular(0),
             buildContainerCircular(1),
@@ -163,12 +183,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Container buildContainerCircular(index) {
     return Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          decoration:
-              BoxDecoration(color: _currentIndex == index? Colors.yellow:Colors.red, shape: BoxShape.circle),
-          width: 40,
-          height: 40,
-        );
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+          color: _currentIndex == index ? Colors.yellow : Colors.red,
+          shape: BoxShape.circle),
+      width: 40,
+      height: 40,
+    );
   }
 
   Column SelectableTextPropertes() {
