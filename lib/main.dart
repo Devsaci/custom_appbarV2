@@ -89,7 +89,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: null);
+      body: Container(
+          color: Colors.brown,
+          padding: EdgeInsets.all(32),
+          child: Column(
+            children: [
+
+            ],
+          ),
+        ),
+    );
   }
 
   Padding buildRadio() {
