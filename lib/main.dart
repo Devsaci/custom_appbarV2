@@ -100,24 +100,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            Row(
-              children: [
-                Radio(
-                  value: 3,
-                  onChanged: (value) {
-                    _radioValue == value;
-                    result="Error";
-                    resultColor=Colors.red;
-                  },
-                  groupValue: _radioValue,
-                ),
-                const Text("3"),
-              ],
-            ),
+            buildRow(),
           ],
         ),
       ),
     );
+  }
+
+  Row buildRow() {
+    return Row(
+            children: [
+              Radio(
+                value: 3,
+                onChanged: (value) {
+                  _radioValue == value;
+                  result="Error";
+                  resultColor=Colors.red;
+                },
+                groupValue: _radioValue,
+              ),
+              const Text("3"),
+            ],
+          );
   }
 
   ListView buildCarousel() {
