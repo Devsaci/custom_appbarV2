@@ -105,7 +105,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Radio(
                   value: 3,
                   onChanged: (value) {
-
+                    _radioValue == value;
+                    result="Error";
+                    resultColor=Colors.red;
                   },
                   groupValue: _radioValue,
                 ),
