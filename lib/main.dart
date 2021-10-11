@@ -72,6 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
   ThemeMode tm = ThemeMode.light;
   bool _swVal = false;
 
+  String _selectedLetter = 'Nationalite';
+  List<String> nat = ['Nationalite','Suisse',  'Canadien', 'Englais', 'Russe'];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -123,9 +126,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Select a Letter!"),
-              DropdownButton(items: []),
+              Text("Select a Nationality!    "),
+              DropdownButton(
+                value: _selectedLetter,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    _selectedLetter = newValue!;
+                  });
+                },
+                items:
+                nat.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
             ],
           ),
         ),
