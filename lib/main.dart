@@ -11,26 +11,6 @@ void main() {
   runApp( MyHomePage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,canvasColor: Colors.yellow,
-      ),
-      darkTheme: ThemeData(
-        primarySwatch: Colors.blue, canvasColor: Colors.brown
-      ),
-      home:  MyHomePage(),
-    );
-  }
-}
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
