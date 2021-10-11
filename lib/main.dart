@@ -71,7 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,canvasColor: Colors.yellow,
+      ),
+      darkTheme: ThemeData(
+          primarySwatch: Colors.blue, canvasColor: Colors.brown
+      ),
+      home: const MyHomePage(),
+    );Scaffold(
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
