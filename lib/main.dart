@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: const MyHomePage(),
     );
   }
@@ -373,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-              ToolbarOptions(copy: true, selectAll: true, paste: true),
+          ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
