@@ -54,12 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
   bool cSharp = false;
   bool python = false;
 
-  String get txt{
+  String get txt {
     String str = "You Selected : \n";
     if (js == true) str += "JavaScript \n";
     if (cSharp == true) str += "cSharp \n";
-    if (python == true) str += "python \n";
-    else str += "None";
+    if (python == true)
+      str += "python \n";
+    else
+      str += "None";
     return str;
   }
 
@@ -102,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: buildCheckbox(context),
+      body: null,
     );
   }
 
