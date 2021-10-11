@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ThemeMode tm = ThemeMode.light;
-   bool _swVal = false;
+  bool _swVal = false;
 
   @override
   Widget build(BuildContext context) {
@@ -131,8 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Switch(
                 value: _swVal,
-                onChanged: (bool value){
+                onChanged: (bool value) {
+                  setState(() {
 
+                  });
                 },
                 activeColor: Colors.black,
                 inactiveThumbColor: Colors.blue,
