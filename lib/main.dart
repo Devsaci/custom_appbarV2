@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: MyHomePage(),
     );
   }
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
@@ -121,33 +121,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Text("Lignt"),
-              ),
-              Switch(
-                value: _swVal,
-                onChanged: (bool value) {
-                  setState(() {
-                    _swVal = value;
-                    if (_swVal == false) tm = ThemeMode.light;
-                    else tm = ThemeMode.dark;
-                  });
-                },
-                activeColor: Colors.black,
-                inactiveThumbColor: Colors.blue,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Text("Dark"),
-              ),
-            ],
+        body: Center(),
+      ),
+    );
+  }
+
+  Center buildSwitch() {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(40.0),
+            child: Text("Lignt"),
           ),
-        ),
+          Switch(
+            value: _swVal,
+            onChanged: (bool value) {
+              setState(() {
+                _swVal = value;
+                if (_swVal == false)
+                  tm = ThemeMode.light;
+                else
+                  tm = ThemeMode.dark;
+              });
+            },
+            activeColor: Colors.black,
+            inactiveThumbColor: Colors.blue,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Text("Dark"),
+          ),
+        ],
       ),
     );
   }
@@ -417,7 +423,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-          ToolbarOptions(copy: true, selectAll: true, paste: true),
+              ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
