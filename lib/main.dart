@@ -121,7 +121,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: Center(),
+        body: Center(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Text("Lignt"),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Text("Dark"),
+              ),
+
+            ],
+          ),
+        ),
       ),
     );
   }
