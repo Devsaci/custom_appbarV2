@@ -121,7 +121,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: Center(),
+        body: Center(
+          child: Row(
+            children: [
+              Text("Select a Letter!"),
+              DropdownButton(items: []),
+            ],
+          ),
+        ),
       ),
     );
   }
