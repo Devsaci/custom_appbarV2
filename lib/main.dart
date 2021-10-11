@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
     if (cSharp == true) str += "cSharp \n";
     if (python == true) str += "python \n";
     else str += "None";
-
     return str;
   }
 
@@ -103,70 +102,74 @@ class _MyHomePageState extends State<MyHomePage> {
               fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(18.0),
-        child: Column(
-          children: [
-            const Text(
-              "Select All Programming Languages you know",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                Checkbox(
-                  value: js,
-                  onChanged: (value) {
-                    setState(() {
-                      js = value!;
-                    });
-                  },
+      body: buildCheckbox(context),
+    );
+  }
+
+  Padding buildCheckbox(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(18.0),
+      child: Column(
+        children: [
+          const Text(
+            "Select All Programming Languages you know",
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: js,
+                onChanged: (value) {
+                  setState(() {
+                    js = value!;
+                  });
+                },
+              ),
+              Text("JavaScript"),
+            ],
+          ),
+          CheckboxListTile(
+            value: cSharp,
+            onChanged: (value) {
+              setState(() {
+                cSharp = value!;
+              });
+            },
+            title: Text("cSharp"),
+            subtitle: Text("####"),
+            controlAffinity: ListTileControlAffinity.leading,
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: python,
+                onChanged: (value) {
+                  setState(() {
+                    python = value!;
+                  });
+                },
+              ),
+              Text("python"),
+            ],
+          ),
+          RaisedButton(
+            child: Text("Applying"),
+            onPressed: () {
+              var ad = AlertDialog(
+                title: Text("Thank you for Applying"),
+                content: Container(
+                  height: 100,
+                  child: Text(txt),
                 ),
-                Text("JavaScript"),
-              ],
-            ),
-            CheckboxListTile(
-              value: cSharp,
-              onChanged: (value) {
-                setState(() {
-                  cSharp = value!;
-                });
-              },
-              title: Text("cSharp"),
-              subtitle: Text("####"),
-              controlAffinity: ListTileControlAffinity.leading,
-            ),
-            Row(
-              children: [
-                Checkbox(
-                  value: python,
-                  onChanged: (value) {
-                    setState(() {
-                      python = value!;
-                    });
-                  },
-                ),
-                Text("python"),
-              ],
-            ),
-            RaisedButton(
-              child: Text("Applying"),
-              onPressed: () {
-                var ad = AlertDialog(
-                  title: Text("Thank you for Applying"),
-                  content: Container(
-                    height: 100,
-                    child: Text(txt),
-                  ),
-                );
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return ad;
-                    });
-              },
-            )
-          ],
-        ),
+              );
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return ad;
+                  });
+            },
+          )
+        ],
       ),
     );
   }
