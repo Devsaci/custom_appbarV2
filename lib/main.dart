@@ -81,45 +81,45 @@ class _MyHomePageState extends State<MyHomePage> {
       darkTheme: ThemeData(
           primarySwatch: Colors.blue, canvasColor: Colors.brown
       ),
-      home: const MyHomePage(),
-    );Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 2),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.account_circle),
-              ),
-            ],
+      home: Scaffold(
+        appBar: AppBar(
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 2),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.account_circle),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.account_circle),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.account_circle),
+            ),
+          ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              color: Colors.teal,
+              gradient: LinearGradient(
+                  colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
+            ),
+          ),
+          centerTitle: true,
+          title: Text(
+            str,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.account_circle),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.account_circle),
-          ),
-        ],
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            color: Colors.teal,
-            gradient: LinearGradient(
-                colors: [Colors.deepPurple, Colors.pink, Colors.deepPurple]),
-          ),
-        ),
-        centerTitle: true,
-        title: Text(
-          str,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
-        ),
+        body: null,
       ),
-      body: null,
     );
   }
 
