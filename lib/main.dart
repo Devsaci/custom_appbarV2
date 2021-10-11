@@ -8,7 +8,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyHomePage());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         primarySwatch: Colors.blue, canvasColor: Colors.brown
       ),
-      home: const MyHomePage(),
+      home:  MyHomePage(),
     );
   }
 }
