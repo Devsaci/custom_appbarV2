@@ -8,7 +8,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
-  runApp( MyHomePage());
+  runApp(MyHomePage());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       themeMode: ThemeMode.system,
       theme: ThemeData(
-        primarySwatch: Colors.blue,canvasColor: Colors.yellow,
+        primarySwatch: Colors.blue,
+        canvasColor: Colors.yellow,
       ),
-      darkTheme: ThemeData(
-        primarySwatch: Colors.blue, canvasColor: Colors.brown
-      ),
-      home:  MyHomePage(),
+      darkTheme:
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+      home: MyHomePage(),
     );
   }
 }
@@ -70,20 +70,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ThemeMode tm = ThemeMode.light;
-
+   bool _swVal = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode:tm,
+      themeMode: tm,
       theme: ThemeData(
-        primarySwatch: Colors.blue,canvasColor: Colors.yellow,
+        primarySwatch: Colors.blue,
+        canvasColor: Colors.yellow,
       ),
-      darkTheme: ThemeData(
-          primarySwatch: Colors.blue, canvasColor: Colors.brown
-      ),
+      darkTheme:
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
@@ -123,18 +123,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(40.0),
                 child: Text("Lignt"),
               ),
+              Switch(
+                value: _swVal,
+                onChanged: (bool value){
 
+                },
+                activeColor: Colors.black,
+                inactiveThumbColor: Colors.blue,
+              ),
               Padding(
                 padding: const EdgeInsets.all(40.0),
                 child: Text("Dark"),
               ),
-
             ],
           ),
         ),
@@ -407,7 +413,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-          ToolbarOptions(copy: true, selectAll: true, paste: true),
+              ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
