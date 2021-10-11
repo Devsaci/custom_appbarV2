@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: MyHomePage(),
     );
   }
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
@@ -133,8 +133,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 value: _swVal,
                 onChanged: (bool value) {
                   setState(() {
-                    _swVal = value ;
-
+                    _swVal = value;
+                    if (_swVal == false) tm = ThemeMode.light;
+                    else tm = ThemeMode.dark;
                   });
                 },
                 activeColor: Colors.black,
@@ -416,7 +417,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-              ToolbarOptions(copy: true, selectAll: true, paste: true),
+          ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
