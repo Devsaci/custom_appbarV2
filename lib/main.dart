@@ -133,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 value: _swVal,
                 onChanged: (bool value) {
                   setState(() {
+                    _swVal = value ;
 
                   });
                 },
