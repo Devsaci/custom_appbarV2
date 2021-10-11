@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
+      themeMode:tm,
       theme: ThemeData(
         primarySwatch: Colors.blue,canvasColor: Colors.yellow,
       ),
