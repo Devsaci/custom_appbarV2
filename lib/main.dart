@@ -124,31 +124,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: Center(
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Select a Nationality!    "),
-              DropdownButton(
-                value: _selectedLetter,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    _selectedLetter = newValue!;
-                  });
-                },
-                items:
-                nat.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
-        ),
+        body: buildDropdownButton(),
       ),
     );
+  }
+
+  Center buildDropdownButton() {
+    return Center(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Select a Nationality!    "),
+            DropdownButton(
+              value: _selectedLetter,
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedLetter = newValue!;
+                });
+              },
+              items:
+              nat.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
+      );
   }
 
   Center buildSwitch() {
