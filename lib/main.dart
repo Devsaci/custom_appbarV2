@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: MyHomePage(),
     );
   }
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
@@ -125,24 +125,35 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: ListView(
-          children: [
+          children: const [
             ExpansionTile(
-              title: Text("title"),
+              title: Text("Account"),
               children: [
-                Divider(color: Colors.black,thickness: 3,),
+                Divider(color: Colors.black, thickness: 3,),
                 ListTile(
                   title: Text("Sign Up!"),
-                    subtitle: Text("Where You can rtegister An account"),
-                  onTap: () {
-                    
-                  },
+                  subtitle: Text("Where You can register An account"),
                 ),
-                Text("title 1"),
-                Text("title 2"),
-                Text("title 3"),
-                Text("title 4"),
+                ListTile(
+                  title: Text("Sign Up!"),
+                  subtitle: Text("Where You can register An account"),
+                ),
+
               ],
-            )
+            ),
+            SizedBox(height: 30,),
+            ExpansionTile(
+              title: Text("More Information"),
+              children: [
+                Divider(color: Colors.black, thickness: 3,),
+                ListTile(
+                  title: Text("Contact"),
+                  subtitle: Text("Where You can register An account"),
+                ),
+
+
+              ],
+            ),
           ],
         ),
       ),
@@ -471,7 +482,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-              ToolbarOptions(copy: true, selectAll: true, paste: true),
+          ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
