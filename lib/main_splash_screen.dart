@@ -11,6 +11,16 @@ class MainSplashScreen extends StatefulWidget {
 class _MainSplashScreenState extends State<MainSplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: SplashScreen(
+              seconds: 3,
+
+          ),
+
+        ),
+
+    );
   }
 }
