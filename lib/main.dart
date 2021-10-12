@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: MyHomePage(),
     );
   }
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         canvasColor: Colors.yellow,
       ),
       darkTheme:
-      ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
+          ThemeData(primarySwatch: Colors.blue, canvasColor: Colors.brown),
       home: Scaffold(
         appBar: AppBar(
           leading: Padding(
@@ -124,73 +124,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
           ),
         ),
-        body: ListView(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: ExpansionTile(
-                backgroundColor: Colors.pink,
-                leading: Icon(Icons.perm_identity),
-                title: Text("Account"),
-                children: [
-                  Divider(
-                    color: Colors.black,
-                    thickness: 3,
-                  ),
-                  Card(
-                    color: Colors.redAccent[100],
-                    child: ListTile(
-                      leading: Icon(Icons.arrow_back),
-                      trailing: Icon(Icons.add),
-                      title: Text("Sign Up!"),
-                      subtitle: Text("Where You can register An account"),
-                    ),
-                  ),
-                  Card(
-                    color: Colors.redAccent[400],
-                    child: ListTile(
-                      leading: Icon(Icons.arrow_back),
-                      trailing: Icon(Icons.add),
-                      title: Text("Sign Up!"),
-                      subtitle: Text("Where You can register An account"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: ExpansionTile(
-                backgroundColor: Colors.amber[700],
-                leading: Icon(Icons.phone_android),
-                title: Text("More Information"),
-                children: [
-                  Divider(
-                    color: Colors.black,
-                    thickness: 3,
-                  ),
-                  Card(
-                    color:Colors.amber[400],
-                    child: ListTile(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      leading: Icon(Icons.arrow_back),
-                      trailing: Icon(Icons.add),
-                      title: Text("Contact"),
-                      subtitle: Text("Where You can register An account"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        body: buildExpansionTile(),
       ),
     );
+  }
+
+  ListView buildExpansionTile() {
+    return ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: ExpansionTile(
+              backgroundColor: Colors.pink,
+              leading: Icon(Icons.perm_identity),
+              title: Text("Account"),
+              children: [
+                Divider(
+                  color: Colors.black,
+                  thickness: 3,
+                ),
+                Card(
+                  color: Colors.redAccent[100],
+                  child: ListTile(
+                    leading: Icon(Icons.arrow_back),
+                    trailing: Icon(Icons.add),
+                    title: Text("Sign Up!"),
+                    subtitle: Text("Where You can register An account"),
+                  ),
+                ),
+                Card(
+                  color: Colors.redAccent[400],
+                  child: ListTile(
+                    leading: Icon(Icons.arrow_back),
+                    trailing: Icon(Icons.add),
+                    title: Text("Sign Up!"),
+                    subtitle: Text("Where You can register An account"),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: ExpansionTile(
+              backgroundColor: Colors.amber[700],
+              leading: Icon(Icons.phone_android),
+              title: Text("More Information"),
+              children: [
+                Divider(
+                  color: Colors.black,
+                  thickness: 3,
+                ),
+                Card(
+                  color: Colors.amber[400],
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    leading: Icon(Icons.arrow_back),
+                    trailing: Icon(Icons.add),
+                    title: Text("Contact"),
+                    subtitle: Text("Where You can register An account"),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
   }
 
   Center buildDropdownButton() {
@@ -515,7 +519,7 @@ class _MyHomePageState extends State<MyHomePage> {
           cursorWidth: 10,
           style: TextStyle(fontSize: 15),
           toolbarOptions:
-          ToolbarOptions(copy: true, selectAll: true, paste: true),
+              ToolbarOptions(copy: true, selectAll: true, paste: true),
         ),
         SizedBox(
           height: 15,
