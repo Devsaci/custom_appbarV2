@@ -7,9 +7,11 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import 'main_splash_screen.dart';
+
 
 void main() {
-  runApp(MyHomePage());
+  runApp(MainSplashScreen());
 }
 
 class MyApp extends StatelessWidget {

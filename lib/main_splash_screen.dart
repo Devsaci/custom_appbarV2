@@ -16,6 +16,7 @@ class _MainSplashScreenState extends State<MainSplashScreen> {
         home: Scaffold(
           body: SplashScreen(
               seconds: 3,
+            title : const Text('SplashScreen tutorial'),
 
           ),
 
