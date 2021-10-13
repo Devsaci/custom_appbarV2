@@ -7,6 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import 'package:splash_screen_view/SplashScreenView.dart';
 import 'main_splash_screen.dart';
 
 

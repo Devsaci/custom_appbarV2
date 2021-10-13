@@ -74,6 +74,10 @@ flutter:
     - images/s2.jpg
     - images/s3.jpg
 
+splash_screen_view:
+  color: "#ffffff"
+  image: assets/images/s1.jpg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
