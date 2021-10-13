@@ -6,10 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'package:splash_screen_view/SplashScreenView.dart';
 import 'main_splash_screen.dart';
-
 
 void main() {
   runApp(MainSplashScreen());
@@ -135,70 +132,70 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ListView buildExpansionTile() {
     return ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: ExpansionTile(
-              backgroundColor: Colors.pink,
-              leading: Icon(Icons.perm_identity),
-              title: Text("Account"),
-              children: [
-                Divider(
-                  color: Colors.black,
-                  thickness: 3,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(20.0),
+          child: ExpansionTile(
+            backgroundColor: Colors.pink,
+            leading: Icon(Icons.perm_identity),
+            title: Text("Account"),
+            children: [
+              Divider(
+                color: Colors.black,
+                thickness: 3,
+              ),
+              Card(
+                color: Colors.redAccent[100],
+                child: ListTile(
+                  leading: Icon(Icons.arrow_back),
+                  trailing: Icon(Icons.add),
+                  title: Text("Sign Up!"),
+                  subtitle: Text("Where You can register An account"),
                 ),
-                Card(
-                  color: Colors.redAccent[100],
-                  child: ListTile(
-                    leading: Icon(Icons.arrow_back),
-                    trailing: Icon(Icons.add),
-                    title: Text("Sign Up!"),
-                    subtitle: Text("Where You can register An account"),
-                  ),
+              ),
+              Card(
+                color: Colors.redAccent[400],
+                child: ListTile(
+                  leading: Icon(Icons.arrow_back),
+                  trailing: Icon(Icons.add),
+                  title: Text("Sign Up!"),
+                  subtitle: Text("Where You can register An account"),
                 ),
-                Card(
-                  color: Colors.redAccent[400],
-                  child: ListTile(
-                    leading: Icon(Icons.arrow_back),
-                    trailing: Icon(Icons.add),
-                    title: Text("Sign Up!"),
-                    subtitle: Text("Where You can register An account"),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: ExpansionTile(
-              backgroundColor: Colors.amber[700],
-              leading: Icon(Icons.phone_android),
-              title: Text("More Information"),
-              children: [
-                Divider(
-                  color: Colors.black,
-                  thickness: 3,
-                ),
-                Card(
-                  color: Colors.amber[400],
-                  child: ListTile(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    leading: Icon(Icons.arrow_back),
-                    trailing: Icon(Icons.add),
-                    title: Text("Contact"),
-                    subtitle: Text("Where You can register An account"),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Padding(
+          padding: EdgeInsets.all(20.0),
+          child: ExpansionTile(
+            backgroundColor: Colors.amber[700],
+            leading: Icon(Icons.phone_android),
+            title: Text("More Information"),
+            children: [
+              Divider(
+                color: Colors.black,
+                thickness: 3,
+              ),
+              Card(
+                color: Colors.amber[400],
+                child: ListTile(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
+                  leading: Icon(Icons.arrow_back),
+                  trailing: Icon(Icons.add),
+                  title: Text("Contact"),
+                  subtitle: Text("Where You can register An account"),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      );
+        ),
+      ],
+    );
   }
 
   Center buildDropdownButton() {
