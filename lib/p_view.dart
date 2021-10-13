@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+//Model Data class
+class Data{
+
+}
+
+
 class PView extends StatefulWidget {
   const PView({Key? key}) : super(key: key);
 
