@@ -42,6 +42,7 @@ class _PViewState extends State<PView> {
                 (item) => Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
+                      fit: BoxFit.cover,
                       image: ExactAssetImage(item.imageUrl),
                     ),
                   ),
