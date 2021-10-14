@@ -7,10 +7,12 @@ class Data {
   late final String imageUrl;
   late final IconData iconData;
 
-  Data(this.title,
-      this.description,
-      this.imageUrl,
-      this.iconData,);
+  Data(
+    this.title,
+    this.description,
+    this.imageUrl,
+    this.iconData,
+  );
 }
 
 class PView extends StatefulWidget {
@@ -38,8 +40,7 @@ class _PViewState extends State<PView> {
             PageView(
               children: myData
                   .map(
-                    (item) =>
-                    Container(
+                    (item) => Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.cover,
@@ -74,14 +75,17 @@ class _PViewState extends State<PView> {
                         ],
                       ),
                     ),
-              )
+                  )
                   .toList(),
             ),
             Align(
               alignment: Alignment(0, 0.8),
               child: Container(
                 width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.all(10),
                 child: RaisedButton(
+                  padding: EdgeInsets.all(20),
                   color: Colors.red,
                   onPressed: () {},
                   child: Text(
