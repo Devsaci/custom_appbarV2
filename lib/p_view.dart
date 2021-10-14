@@ -78,13 +78,16 @@ class _PViewState extends State<PView> {
                   .toList(),
             ),
             Align(
-              alignment:Alignment(0,0.8),
-              child: RaisedButton(
-                color: Colors.red,
-                onPressed: () {},
-                child: Text(
-                  "GET START",
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+              alignment: Alignment(0, 0.8),
+              child: Container(
+                width: double.infinity,
+                child: RaisedButton(
+                  color: Colors.red,
+                  onPressed: () {},
+                  child: Text(
+                    "GET START",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
                 ),
               ),
             ),
