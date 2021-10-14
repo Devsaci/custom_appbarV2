@@ -27,8 +27,7 @@ class _PViewState extends State<PView> {
     Data("title1", "description1 ", "images/q1.jpg", Icons.add),
     Data("title2", "description2", "images/q2.jpg", Icons.arrow_back),
     Data("title3", "description3", "images/q3.jpg", Icons.phone_android),
-    Data("title4", "description4", "images/q4.jpg",
-        Icons.message_outlined),
+    Data("title4", "description4", "images/q4.jpg", Icons.message_outlined),
   ];
 
   @override
@@ -42,25 +41,53 @@ class _PViewState extends State<PView> {
               children: myData
                   .map(
                     (item) => Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: ExactAssetImage(item.imageUrl),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: ExactAssetImage(item.imageUrl),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            item.iconData,
+                            size: 120,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            height: 80,
+                          ),
+                          Text(
+                            item.title,
+                            style: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.yellowAccent),
+                          ),
+                          Text(
+                            item.description,
+                            style: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.yellowAccent),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(item.iconData,size: 120,color: Colors.white,),
-                      Text(item.title,style: TextStyle(fontSize: 45,fontWeight: FontWeight.bold, color: Colors.yellowAccent ),),
-                      Text(item.description,style: TextStyle(fontSize: 45,fontWeight: FontWeight.bold, color: Colors.yellowAccent ),),
-                    ],
-                  ),
-                ),
-              )
+                  )
                   .toList(),
             ),
-            RaisedButton(onPressed: (){})
+            Center(
+              child: RaisedButton(
+                color: Colors.red,
+                onPressed: () {},
+                child: Text(
+                  "GET START",
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
           ],
         ),
       ),
