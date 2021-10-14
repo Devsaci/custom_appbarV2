@@ -1,3 +1,4 @@
+import 'package:custom_appbar/main.dart';
 import 'package:flutter/material.dart';
 
 //Model Data class
@@ -34,6 +35,7 @@ class _PViewState extends State<PView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {'/a': (ctx) => MyHomePage()},
       home: Scaffold(
         body: Stack(
           children: [
@@ -87,7 +89,9 @@ class _PViewState extends State<PView> {
                 child: RaisedButton(
                   padding: EdgeInsets.all(20),
                   color: Colors.red,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/a');
+                  },
                   child: Text(
                     "GET START",
                     style: TextStyle(color: Colors.white, fontSize: 25),
