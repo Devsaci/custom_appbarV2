@@ -107,3 +107,22 @@ class _PViewState extends State<PView> {
     );
   }
 }
+
+class indicator extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return buildContainer();
+  }
+
+  Container buildContainer() {
+    return Container(
+   height: 10,
+   width: 10,
+   decoration: BoxDecoration(
+     color: Colors.red,
+     shape: BoxShape.circle
+   ),
+ );
+  }
+
+}
