@@ -113,21 +113,21 @@ class indicator extends StatelessWidget{
   Widget build(BuildContext context) {
    return Row(
      children: [
-       buildContainer(),
-       buildContainer(),
-       buildContainer(),
-       buildContainer(),
+       buildContainer(Colors.red),
+       buildContainer(Colors.red),
+       buildContainer(Colors.red),
+       buildContainer(Colors.red),
 
      ],
    );
   }
 
-  Container buildContainer() {
+  Container buildContainer(Color color) {
     return Container(
    height: 10,
    width: 10,
    decoration: BoxDecoration(
-     color: Colors.red,
+     color: color,
      shape: BoxShape.circle
    ),
  );
