@@ -80,21 +80,23 @@ class _PViewState extends State<PView> {
                   )
                   .toList(),
             ),
-            Align(
-              alignment: Alignment(0, 0.8),
-              child: Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                padding: EdgeInsets.all(10),
-                child: RaisedButton(
-                  padding: EdgeInsets.all(20),
-                  color: Colors.red,
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/a');
-                  },
-                  child: Text(
-                    "GET START",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+            Builder(
+              builder: (ctx) => Align(
+                alignment: Alignment(0, 0.8),
+                child: Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.all(10),
+                  child: RaisedButton(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.red,
+                    onPressed: () {
+                      Navigator.of(ctx).pushNamed('/a');
+                    },
+                    child: Text(
+                      "GET START",
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
                   ),
                 ),
               ),
