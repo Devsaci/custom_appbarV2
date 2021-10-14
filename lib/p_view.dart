@@ -38,17 +38,22 @@ class _PViewState extends State<PView> {
       home: Scaffold(
         body: PageView(
           children: myData
-              .map((item) => Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: ExactAssetImage(item.imageUrl),
-                      ),
+              .map(
+                (item) => Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage(item.imageUrl),
                     ),
-            child: Column(
-
-            ),
                   ),
-          ).toList(),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(item.iconData,size: 120,color: Colors.white,)
+                    ],
+                  ),
+                ),
+              )
+              .toList(),
         ),
       ),
     );
