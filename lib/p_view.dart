@@ -44,8 +44,11 @@ class _PViewState extends State<PView> {
                           image: ExactAssetImage(item.imageUrl),
                       ),
                     ),
-                  ))
-              .toList(),
+            child: Column(
+
+            ),
+                  ),
+          ).toList(),
         ),
       ),
     );
