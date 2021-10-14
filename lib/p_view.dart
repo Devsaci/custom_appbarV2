@@ -111,7 +111,15 @@ class _PViewState extends State<PView> {
 class indicator extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-   return buildContainer();
+   return Row(
+     children: [
+       buildContainer(),
+       buildContainer(),
+       buildContainer(),
+       buildContainer(),
+
+     ],
+   );
   }
 
   Container buildContainer() {
