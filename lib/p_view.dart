@@ -36,10 +36,12 @@ class _PViewState extends State<PView> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: PageView(
-          children: myData
-              .map(
-                (item) => Container(
+        body: Stack(
+          children: [
+            PageView(
+              children: myData
+                  .map(
+                    (item) => Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -56,7 +58,10 @@ class _PViewState extends State<PView> {
                   ),
                 ),
               )
-              .toList(),
+                  .toList(),
+            ),
+            RaisedButton(onPressed: (){})
+          ],
         ),
       ),
     );
