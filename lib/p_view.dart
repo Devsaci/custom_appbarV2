@@ -24,10 +24,10 @@ class PView extends StatefulWidget {
 
 class _PViewState extends State<PView> {
   final List<Data> myData = [
-    Data("title1", "description title1", "images/q1.jpg", Icons.add),
-    Data("title2", "description title2", "images/q2.jpg", Icons.arrow_back),
-    Data("title3", "description title3", "images/q3.jpg", Icons.phone_android),
-    Data("title4", "description title4", "images/q4.jpg",
+    Data("title1", "description1 ", "images/q1.jpg", Icons.add),
+    Data("title2", "description2", "images/q2.jpg", Icons.arrow_back),
+    Data("title3", "description3", "images/q3.jpg", Icons.phone_android),
+    Data("title4", "description4", "images/q4.jpg",
         Icons.message_outlined),
   ];
 
@@ -49,7 +49,8 @@ class _PViewState extends State<PView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(item.iconData,size: 120,color: Colors.white,),
-                      Text(item.title,style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.black),)
+                      Text(item.title,style: TextStyle(fontSize: 45,fontWeight: FontWeight.bold, color: Colors.yellowAccent ),),
+                      Text(item.description,style: TextStyle(fontSize: 45,fontWeight: FontWeight.bold, color: Colors.yellowAccent ),),
                     ],
                   ),
                 ),
