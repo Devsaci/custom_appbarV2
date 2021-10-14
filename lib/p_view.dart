@@ -48,7 +48,8 @@ class _PViewState extends State<PView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(item.iconData,size: 120,color: Colors.white,)
+                      Icon(item.iconData,size: 120,color: Colors.white,),
+                      Text(item.title,style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.black),)
                     ],
                   ),
                 ),
