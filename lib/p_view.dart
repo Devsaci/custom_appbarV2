@@ -24,6 +24,8 @@ class PView extends StatefulWidget {
 }
 
 class _PViewState extends State<PView> {
+  int _currentIndex =0;
+
   final List<Data> myData = [
     Data("title1", "description1 ", "images/q1.jpg", Icons.add_circle),
     Data("title2", "description2", "images/q2.jpg", Icons.add_box_outlined),
@@ -79,7 +81,13 @@ class _PViewState extends State<PView> {
                     ),
                   )
                   .toList(),
+                onPageChanged: (val){
+                setState(() {
+                  _currentIndex = val;
+                });
+                },
             ),
+            Center(child: indicator(),),
             Builder(
               builder: (ctx) => Align(
                 alignment: Alignment(0, 0.8),
@@ -112,6 +120,7 @@ class indicator extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return Row(
+       mainAxisAlignment: MainAxisAlignment.center,
      children: [
        buildContainer(Colors.red),
        buildContainer(Colors.red),
@@ -124,8 +133,9 @@ class indicator extends StatelessWidget{
 
   Container buildContainer(Color color) {
     return Container(
-   height: 10,
-   width: 10,
+      margin: EdgeInsets.all(4),
+   height: 20,
+   width: 20,
    decoration: BoxDecoration(
      color: color,
      shape: BoxShape.circle
