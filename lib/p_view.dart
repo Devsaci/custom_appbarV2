@@ -78,7 +78,7 @@ class _PViewState extends State<PView> {
                   .toList(),
             ),
             Align(
-              alignment:Alignment.bottomCenter,
+              alignment:Alignment(0,0.8),
               child: RaisedButton(
                 color: Colors.red,
                 onPressed: () {},
