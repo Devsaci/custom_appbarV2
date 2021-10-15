@@ -87,7 +87,7 @@ class _PViewState extends State<PView> {
                 });
                 },
             ),
-            Center(child: indicator(),),
+            Center(child: indicator(_currentIndex),),
             Builder(
               builder: (ctx) => Align(
                 alignment: Alignment(0, 0.8),
@@ -117,15 +117,19 @@ class _PViewState extends State<PView> {
 }
 
 class indicator extends StatelessWidget{
+  late final int index;
+
+  indicator(this.index);
+
   @override
   Widget build(BuildContext context) {
    return Row(
        mainAxisAlignment: MainAxisAlignment.center,
      children: [
-       buildContainer(Colors.red),
-       buildContainer(Colors.red),
-       buildContainer(Colors.red),
-       buildContainer(Colors.red),
+       buildContainer(index==0?Colors.green:Colors.red),
+       buildContainer(index==1?Colors.green:Colors.red),
+       buildContainer(index==2?Colors.green:Colors.red),
+       buildContainer(index==3?Colors.green:Colors.red),
 
      ],
    );
