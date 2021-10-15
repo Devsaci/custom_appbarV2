@@ -26,7 +26,12 @@ class PView extends StatefulWidget {
 }
 
 class _PViewState extends State<PView> {
-  int _currentIndex = 0;
+
+  final PageController _controller = PageController(
+    initialPage: 1,
+  );
+
+  int _currentIndex = 1;
 
   final List<Data> myData = [
     Data("title1", "description1 ", "images/q1.jpg", Icons.add_circle),
@@ -48,6 +53,7 @@ class _PViewState extends State<PView> {
           children: [
             Builder(
               builder: (ctx) => PageView(
+                controller: _controller,
                 children: myData
                     .map(
                       (item) => Container(
