@@ -91,7 +91,7 @@ class _PViewState extends State<PView> {
                   setState(() {
                     _currentIndex = val;
                     if (_currentIndex == 3) {
-                      Future.delayed(const Duration(seconds: 2), () {Navigator.of(ctx).pushNamed('/b');});
+                      Future.delayed(const Duration(seconds: 2), () => Navigator.of(ctx).pushNamed('/b'));
                     }
                   });
                 },
