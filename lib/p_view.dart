@@ -104,7 +104,7 @@ class _PViewState extends State<PView> {
                     padding: EdgeInsets.all(10),
                     color: Colors.red,
                     onPressed: () {
-                      Navigator.of(ctx).pushNamed('/a');
+                      Navigator.of(ctx).pushNamed('/b');
                     },
                     child: Text(
                       "GET START",
