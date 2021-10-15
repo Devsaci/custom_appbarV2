@@ -29,10 +29,10 @@ class PView extends StatefulWidget {
 
 class _PViewState extends State<PView> {
   final PageController _controller = PageController(
-    initialPage: 1,
+    initialPage: 0,
   );
 
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
   final List<Data> myData = [
     Data("title1", "description1 ", "images/q1.jpg", Icons.add_circle),
@@ -43,10 +43,16 @@ class _PViewState extends State<PView> {
 
   @override
   void initState() {
-    Timer.periodic(Duration(seconds: 3),
-            (timer) {
-
-            });
+    Timer.periodic(const Duration(seconds: 2), (timer) async {
+      //first stape
+      if (_currentIndex < 3) _currentIndex++;
+      //Seconde stape
+      _controller.animateToPage(
+        _currentIndex,
+        duration: Duration(seconds: 2),
+        curve: Curves.easeIn,
+      );
+    });
     super.initState();
   }
 
