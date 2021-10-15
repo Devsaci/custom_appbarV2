@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:custom_appbar/main.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +28,6 @@ class PView extends StatefulWidget {
 }
 
 class _PViewState extends State<PView> {
-
   final PageController _controller = PageController(
     initialPage: 1,
   );
@@ -39,6 +40,15 @@ class _PViewState extends State<PView> {
     Data("title3", "description3", "images/q3.jpg", Icons.phone_android),
     Data("title4", "description4", "images/q4.jpg", Icons.message_outlined),
   ];
+
+  @override
+  void initState() {
+    Timer.periodic(Duration(seconds: 3),
+            (timer) {
+
+            });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +107,8 @@ class _PViewState extends State<PView> {
                   setState(() {
                     _currentIndex = val;
                     if (_currentIndex == 3) {
-                      Future.delayed(const Duration(seconds: 2), () => Navigator.of(ctx).pushNamed('/b'));
+                      Future.delayed(const Duration(seconds: 2),
+                          () => Navigator.of(ctx).pushNamed('/b'));
                     }
                   });
                 },
