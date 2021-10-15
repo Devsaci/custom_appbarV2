@@ -1,6 +1,8 @@
 import 'package:custom_appbar/main.dart';
 import 'package:flutter/material.dart';
 
+import 'main_splash_screen.dart';
+
 //Model Data class
 class Data {
   late final String title;
@@ -24,7 +26,7 @@ class PView extends StatefulWidget {
 }
 
 class _PViewState extends State<PView> {
-  int _currentIndex =0;
+  int _currentIndex = 0;
 
   final List<Data> myData = [
     Data("title1", "description1 ", "images/q1.jpg", Icons.add_circle),
@@ -37,7 +39,10 @@ class _PViewState extends State<PView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {'/a': (ctx) => MyHomePage()},
+      routes: {
+        '/a': (ctx) => MyHomePage(),
+        '/b': (ctx) => MainSplashScreen(),
+      },
       home: Scaffold(
         body: Stack(
           children: [
@@ -81,22 +86,22 @@ class _PViewState extends State<PView> {
                     ),
                   )
                   .toList(),
-                onPageChanged: (val){
+              onPageChanged: (val) {
                 setState(() {
                   _currentIndex = val;
                 });
-                },
+              },
             ),
-            Center(child: indicator(_currentIndex),),
+            indicator(_currentIndex),
             Builder(
               builder: (ctx) => Align(
                 alignment: Alignment(0, 0.8),
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
+                  padding: EdgeInsets.all(1),
                   child: RaisedButton(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(10),
                     color: Colors.red,
                     onPressed: () {
                       Navigator.of(ctx).pushNamed('/a');
@@ -116,35 +121,33 @@ class _PViewState extends State<PView> {
   }
 }
 
-class indicator extends StatelessWidget{
+class indicator extends StatelessWidget {
   late final int index;
 
   indicator(this.index);
 
   @override
   Widget build(BuildContext context) {
-   return Row(
-       mainAxisAlignment: MainAxisAlignment.center,
-     children: [
-       buildContainer(index==0?Colors.green:Colors.red),
-       buildContainer(index==1?Colors.green:Colors.red),
-       buildContainer(index==2?Colors.green:Colors.red),
-       buildContainer(index==3?Colors.green:Colors.red),
-
-     ],
-   );
+    return Align(
+      alignment: Alignment(0, 0.55),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          buildContainer(index == 0 ? Colors.green : Colors.red),
+          buildContainer(index == 1 ? Colors.green : Colors.red),
+          buildContainer(index == 2 ? Colors.green : Colors.red),
+          buildContainer(index == 3 ? Colors.green : Colors.red),
+        ],
+      ),
+    );
   }
 
   Container buildContainer(Color color) {
     return Container(
       margin: EdgeInsets.all(4),
-   height: 20,
-   width: 20,
-   decoration: BoxDecoration(
-     color: color,
-     shape: BoxShape.circle
-   ),
- );
+      height: 20,
+      width: 20,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+    );
   }
-
 }
