@@ -90,7 +90,9 @@ class _PViewState extends State<PView> {
                 onPageChanged: (val) {
                   setState(() {
                     _currentIndex = val;
-                    if (_currentIndex == 3) Navigator.of(ctx).pushNamed('/b');
+                    if (_currentIndex == 3) {
+                      Future.delayed(const Duration(seconds: 2), () {Navigator.of(ctx).pushNamed('/b');});
+                    }
                   });
                 },
               ),
