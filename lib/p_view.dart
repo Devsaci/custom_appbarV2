@@ -46,51 +46,54 @@ class _PViewState extends State<PView> {
       home: Scaffold(
         body: Stack(
           children: [
-            PageView(
-              children: myData
-                  .map(
-                    (item) => Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: ExactAssetImage(item.imageUrl),
+            Builder(
+              builder: (ctx) => PageView(
+                children: myData
+                    .map(
+                      (item) => Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: ExactAssetImage(item.imageUrl),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              item.iconData,
+                              size: 120,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              height: 80,
+                            ),
+                            Text(
+                              item.title,
+                              style: TextStyle(
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.yellowAccent),
+                            ),
+                            Text(
+                              item.description,
+                              style: TextStyle(
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.yellowAccent),
+                            ),
+                          ],
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            item.iconData,
-                            size: 120,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            height: 80,
-                          ),
-                          Text(
-                            item.title,
-                            style: TextStyle(
-                                fontSize: 45,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.yellowAccent),
-                          ),
-                          Text(
-                            item.description,
-                            style: TextStyle(
-                                fontSize: 45,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.yellowAccent),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                  .toList(),
-              onPageChanged: (val) {
-                setState(() {
-                  _currentIndex = val;
-                });
-              },
+                    )
+                    .toList(),
+                onPageChanged: (val) {
+                  setState(() {
+                    _currentIndex = val;
+                    if (_currentIndex == 3) Navigator.of(ctx).pushNamed('/b');
+                  });
+                },
+              ),
             ),
             indicator(_currentIndex),
             Builder(
@@ -129,7 +132,7 @@ class indicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment(0, 0.55),
+      alignment: Alignment(0, 0.95),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
